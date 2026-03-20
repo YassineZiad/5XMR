@@ -4,10 +4,34 @@
              x:Class="gestion_contacts.ContactForm">
     <ContentPage.Content>
         <StackLayout>
-            <Editor Placeholder="Nom" Text="E" HeightRequest="100" />
-            <Grid ColumnDefinitions="*,*">
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+            <Label Text="Prénom *" FontAttributes="Bold" />
+            <Entry Text="{Binding FirstName}" Placeholder="Entrez le prénom" />
+
+            <Label Text="Nom *" FontAttributes="Bold" />
+            <Entry Text="{Binding LastName}" Placeholder="Entrez le nom" />
+
+            <Label Text="Téléphone (GSM) *" FontAttributes="Bold" />
+            <Entry Text="{Binding GSMNumber}" Placeholder="06..." Keyboard="Telephone" />
+
+            <Label Text="Email" FontAttributes="Bold" />
+            <Entry Text="{Binding Email}" Placeholder="exemple@mail.com" Keyboard="Email" />
+
+            <Label Text="Note" FontAttributes="Bold" />
+            <Editor Text="{Binding Note}" Placeholder="Informations complémentaires" HeightRequest="100" />
+
+            <Label Text="* Champs obligatoires" FontSize="Small" TextColor="Gray" Margin="0,10,0,0" />
+
+            <Grid ColumnDefinitions="*,*" Margin="0,20,0,0">
+                <Button Text="Enregistrer" 
+                        BackgroundColor="DeepSkyBlue" 
+                        TextColor="White"
+                        Clicked="OnSaveButtonClicked" />
+
+                <Button Grid.Column="1" 
+                        Text="Supprimer" 
+                        BackgroundColor="Crimson" 
+                        TextColor="White"
+                        Clicked="OnDeleteButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

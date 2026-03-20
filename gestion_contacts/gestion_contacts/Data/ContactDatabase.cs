@@ -17,7 +17,7 @@ namespace gestion_contacts.Data
 
 		public Task<List<Contact>> GetAllAsync()
 		{
-			return database.Table<Contact>().ToListAsync();
+			return database.Table<Contact>().OrderBy(c => c.FirstName).ToListAsync();
 		}
 
 		public Task<Contact> GetByIdAsync(int id)

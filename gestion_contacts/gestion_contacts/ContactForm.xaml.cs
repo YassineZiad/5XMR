@@ -29,8 +29,8 @@ namespace gestion_contacts
 			try
 			{
 				var contact = await App.ContactDb.GetByIdAsync(Convert.ToInt32(id));
-
-				BindingContext = contact;
+				if (contact != null)
+					BindingContext = contact;
 			}
 			catch (Exception)
 			{
