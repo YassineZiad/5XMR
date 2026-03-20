@@ -23,14 +23,14 @@ namespace gestion_contacts
 			if (e.CurrentSelection != null)
 			{
 				Contact contact = (Contact)e.CurrentSelection.FirstOrDefault();
-				await Shell.Current.GoToAsync($"ContactForm?ContactId={contact.Id}");
-				//await Shell.Current.GoToAsync($"{nameof(ContactForm)}?{nameof(ContactForm.ContactId)}={contact.Id}");
+				//await Shell.Current.GoToAsync($"ContactForm?ContactId={contact.Id}");
+				await Shell.Current.GoToAsync($"{nameof(ContactForm)}?{nameof(ContactForm.ContactId)}={contact.Id}");
 			}
 		}
 
 		private async void OnNewContactClicked(object sender, EventArgs e)
 		{
-			await Shell.Current.GoToAsync("ContactForm");
+			await Shell.Current.GoToAsync("ContactForm?ContactId=0");
 		}
 	}
 }
